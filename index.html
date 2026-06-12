@@ -1,13 +1,860 @@
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link
+    href="https://googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet">
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFG</title>
-</head>
-<body>
-    <h1>Hello World this is my first web page.</h1>
-</body>
-</html>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="cid:css-e420d5d9-538a-4929-b9cf-361661053525@mhtml.blink" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimalkumar Patel | Staff Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a2332;
+            --bg-card: #1e2a3a;
+            --text-primary: #e8edf3;
+            --text-secondary: #8899a6;
+            --accent: #4fc3f7;
+            --accent-green: #66bb6a;
+            --accent-orange: #ffa726;
+            --border: #2d3f50;
+            --gradient: linear-gradient(135deg, #4fc3f7, #66bb6a);
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-green);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0px auto;
+            padding: 0px 2rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+
+
+            background-image: var(--gradient);
+            background-size: 100%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text h1 span {
+            background-image: var(--gradient);
+            background-size: 100%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .tagline {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: rgb(15, 20, 25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: rgba(79, 195, 247, 0.3) 0px 8px 25px;
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(79, 195, 247, 0.1);
+        }
+
+        .headshot {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 5rem 0px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title span {
+            background-image: var(--gradient);
+            background-size: 100%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            background-image: var(--gradient);
+            background-size: 100%;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -2.55rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-item .period {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            margin: 0.3rem 0px;
+        }
+
+        .timeline-item .company {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .timeline-item .description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .timeline-item ul {
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .timeline-item ul li {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .skill-category h4 {
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .project-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .impact {
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .headshot {
+                margin: 0px auto;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">VP</a>
+            <ul>
+                <li><a href="#about">About</a>
+                </li>
+                <li><a href="#experience">Experience</a>
+                </li>
+                <li><a href="#projects">Impact</a>
+                </li>
+                <li><a href="#skills">Skills</a>
+                </li>
+                <li><a href="#education">Education</a>
+                </li>
+                <li><a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Vimalkumar <span>Patel</span></h1>
+                    <p class="subtitle">Staff-Level Software Engineer</p>
+                    <p class="tagline">15+ years building large-scale distributed systems. 6+ years at Meta architecting
+                        privacy compliance infrastructure that federates work across 2,300+ oncalls company-wide. Proven
+                        impact: 93%+ latency reductions, 50%+ operational savings, and company-wide process automation.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">✉ Get in Touch</a>
+                        <a href="https://github.com/vimalkumarpatel/about/blob/main/Vimalkumar%20Patel%20Resume.pdf"
+                            class="btn btn-outline" download="">⇩ Download Resume</a>
+                    </div>
+                </div>
+                <div class="headshot">
+                    <span>Your Photo<br>Here</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p class="section-subtitle">Platform engineer, privacy infrastructure architect, and engineering leader</p>
+            <p style="color:var(--text-secondary);max-width:800px;margin-bottom:2rem;">I specialize in designing and
+                delivering foundational systems at scale. At Meta, I've architected the Federation Platform's Scheduler,
+                SLA-based processing, and capacity-based work allocation systems. I thrive at the intersection of
+                technical depth and cross-functional leadership — turning ambiguous problem spaces into shipped products
+                with measurable outcomes.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">15+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">93%</div>
+                    <div class="label">Latency Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">2,300+</div>
+                    <div class="label">Oncalls Impacted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">50%+</div>
+                    <div class="label">Ops Savings</div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">Top 2%</div>
+                    <div class="label">AI Adopter at Meta</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">15+</div>
+                    <div class="label">Brown Bags Hosted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">5+</div>
+                    <div class="label">Engineers Mentored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">100%</div>
+                    <div class="label">Feature Adoption</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience <span>Timeline</span></h2>
+            <p class="section-subtitle">A track record of increasing scope and impact</p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <span class="period">H2 2025 — Present</span>
+                    <h3>Unified Inbox &amp; Regulatory Response Platform</h3>
+                    <p class="company">Meta — RR&amp;R: Reg Readiness (New York, NY)</p>
+                    <ul>
+                        <li>Owned full-stack backend architecture and UI for action-oriented review workflow</li>
+                        <li>Exceeded adoption: 12 of 17 assignments interacted within 1 week (target: 50% in 14 days)
+                        </li>
+                        <li>Designed schema, GraphQL, and mutation support adopted across Inbox product</li>
+                        <li>Authored strategic vision doc for RCM Insights laddering to Org roadmap</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">H2 2025</span>
+                    <h3>Goals Performance &amp; Modernization</h3>
+                    <p class="company">Meta — RR&amp;R: Reg Readiness</p>
+                    <ul>
+                        <li>Reduced %MAD by 93.3% (149→10 users); P99 latency 93.8% (9,359ms→580ms)</li>
+                        <li>Memory reduction 87% (468MB→58MB)</li>
+                        <li>Migrated legacy filters to Tada framework for long-term scalability</li>
+                        <li>Led EngExcellence Maturity to "Walk" status</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">H2 2024</span>
+                    <h3>Workstream Operations &amp; Proposal Automation</h3>
+                    <p class="company">Meta — Federation Platform</p>
+                    <ul>
+                        <li>Delivered bulk operations dashboard saving 52 hours/month for Program team</li>
+                        <li>100% adoption across Privacy and Accessibility workstream owners</li>
+                        <li>Automated proposal creation unblocking MAP 87 milestone M13</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">H2 2023 — H1 2024</span>
+                    <h3>Rewaves Refresh</h3>
+                    <p class="company">Meta — Federation Platform</p>
+                    <ul>
+                        <li>Reduced company-wide overhead to 400-500 manual hours annually</li>
+                        <li>Reduced task owner effort to &lt;2 minutes for requesting rewave</li>
+                        <li>Customer testimonials: "a smashing success!" — Dave Dennis (WSO)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">H2 2021 — 2022</span>
+                    <h3>Waves Scheduler &amp; SLA-Based Processing</h3>
+                    <p class="company">Meta — Federation Platform</p>
+                    <ul>
+                        <li>Reduced operational overhead 50%+: from 2 SWEs to single-oncall execution</li>
+                        <li>Advanced visibility for 2,300 oncalls up to 7 days ahead of wave start</li>
+                        <li>Designed end-to-end Initiative Schedules Lifecycle architecture</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">H1 2021</span>
+                    <h3>Queuing &amp; Dispatching / Queue Dashboard</h3>
+                    <p class="company">Meta — Remediation Platform</p>
+                    <ul>
+                        <li>95%+ performance improvement (28s→800ms query time)</li>
+                        <li>Drove 47k+ task ownership acknowledgments; 61.1% acknowledgment rate</li>
+                        <li>Onboarded new teammate and coordinated XFN project delivery</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">May 2019 — Aug 2019</span>
+                    <h3>Lead Software Engineer</h3>
+                    <p class="company">Target Corporation — San Francisco, CA</p>
+                    <p class="description">Technical guidance on API integration, design patterns, and contract testing
+                        with Spring Cloud.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">Nov 2014 — May 2019</span>
+                    <h3>Senior Software Engineer</h3>
+                    <p class="company">Wells Fargo — San Francisco, CA</p>
+                    <ul>
+                        <li>Reduced chatbot response time from 5s to 0.4s (92% improvement)</li>
+                        <li>Reduced intent resolution time by 50% via caching</li>
+                        <li>Designed RESTful APIs for Disability Finance Management</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">Mar 2016 — Oct 2017</span>
+                    <h3>Senior Software Engineer</h3>
+                    <p class="company">Capital One — San Francisco, CA</p>
+                    <ul>
+                        <li>Boosted test coverage from 45% to 90% in 2.5 weeks</li>
+                        <li>Migrated Oracle 11g to PostgreSQL using AWS Schema Conversion Tool</li>
+                        <li>Enhanced approval rates by estimated 33% for new customers</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="period">2009 — 2014</span>
+                    <h3>Earlier Roles</h3>
+                    <p class="company">Yelp · CME Group · Accenture · OpenStrides</p>
+                    <p class="description">Security &amp; PII Detection, QA Automation, Telecom Systems (Telekom
+                        Austria/Vodafone), CRM Software</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Key <span>Impact</span></h2>
+            <p class="section-subtitle">Quantified results from foundational systems</p>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h4>Unified Inbox Platform</h4>
+                    <p class="impact">▲ 12/17 assignments engaged in &lt;1 week (goal: 50% in 14 days)</p>
+                    <p>Full-stack action-oriented review workflow for regulatory inquiries across Meta. Schema design,
+                        GraphQL exposure, bulk operations, and multi-status workflows.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>Goals Performance Overhaul</h4>
+                    <p class="impact">▼ 93.8% P99 latency · 87% memory reduction · 93.3% MAD reduction</p>
+                    <p>Drove Goals tool to KTLO-ready state through performance tuning, OOM resolution, and Tada
+                        framework migration. Freed team capacity for higher-priority work.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>Federation Platform Scheduler</h4>
+                    <p class="impact">▼ 50%+ operational overhead · +7 days advance visibility</p>
+                    <p>Architected the foundational wave dequeuing and reporting automation across Meta's Privacy
+                        program. Deprecated manual spreadsheets with granular dashboards.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>Rewaves Refresh</h4>
+                    <p class="impact">▼ Company overhead to 400-500 hrs/yr · &lt;2 min per request</p>
+                    <p>End-to-end redesign of task rewave workflow. Partnered with Data Science, established control
+                        policies, integrated with FCSLA. Customer quote: "a smashing success!"</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>Queue Management System</h4>
+                    <p class="impact">▲ 95%+ query performance (28s→800ms) · 90% less objects</p>
+                    <p>Capacity-based allocation system with load balancing. Built Queue UI, drove 47k+ ownership
+                        acknowledgments, and eliminated all tag-related operational overhead.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>Workstream Operations Dashboard</h4>
+                    <p class="impact">▼ 52 hrs/month saved · 100% adoption rate</p>
+                    <p>Bulk workstream management enabling Rewaves, Onboarding/Waves Readiness checks, and Quality
+                        Reviews. Zero users reverted to old UI.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>SLA Commitment System</h4>
+                    <p class="impact">▲ 100% Deletion coverage · Tasks reach owner 3 days sooner</p>
+                    <p>Built and rolled out SLA system to all Deletion workstreams. Heavy XFN with UXRs, Ownership Eng,
+                        TPMs through user research and iterative design.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>Database &amp; Platform Optimization</h4>
+                    <p class="impact">▼ 89.1% table compaction · 30.17% total DB reduction</p>
+                    <p>TTL deletion reduced ent count 86.31%. Lowered EntFrugalActions reads by 99.76%. Caching reduced
+                        GraphQL walltime by 92.8%.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical <span>Skills</span></h2>
+            <p class="section-subtitle">Full-stack expertise across languages, systems, and practices</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PHP/Hack</span><span class="skill-tag">Python</span><span
+                            class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span
+                            class="skill-tag">GraphQL</span><span class="skill-tag">SQL</span><span
+                            class="skill-tag">Java</span><span class="skill-tag">C/C++</span><span
+                            class="skill-tag">Shell</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Systems &amp; Frameworks</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span><span class="skill-tag">Relay</span><span
+                            class="skill-tag">EntQL/Ent Framework</span><span class="skill-tag">Alacorn</span><span
+                            class="skill-tag">GraphQL Mutations</span><span class="skill-tag">Thrift</span><span
+                            class="skill-tag">Proton UI</span><span class="skill-tag">Spring Boot</span><span
+                            class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Infrastructure</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Sandcastle</span><span class="skill-tag">Manifold</span><span
+                            class="skill-tag">Configerator</span><span class="skill-tag">JustKnobs</span><span
+                            class="skill-tag">ODS</span><span class="skill-tag">Scuba</span><span
+                            class="skill-tag">Unidash</span><span class="skill-tag">XDB</span><span
+                            class="skill-tag">Hive</span><span class="skill-tag">Presto</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Practices &amp; Leadership</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">System Design</span><span class="skill-tag">Performance
+                            Engineering</span><span class="skill-tag">API Design</span><span class="skill-tag">SLA
+                            Modeling</span><span class="skill-tag">Capacity Planning</span><span
+                            class="skill-tag">Technical Leadership</span><span class="skill-tag">XFN Program
+                            Delivery</span><span class="skill-tag">Mentorship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education &amp; <span>Publications</span></h2>
+            <p class="section-subtitle">Academic foundation and research contributions</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>University of Illinois at Chicago</h4>
+                    <p class="impact">M.S. Computer Science — 2014</p>
+                    <p>Research Assistant: Static code analysis, execution tracing, server virtualization</p>
+                </div>
+                <div class="project-card">
+                    <h4>South Gujarat University</h4>
+                    <p class="impact">B.E. Computer Science — 2009</p>
+                    <p>Published Paper: "ZEOS: An OS from scratch" — CSI ETCT 2008, National Conference</p>
+                </div>
+                <div class="project-card">
+                    <h4>Certifications</h4>
+                    <p class="impact">10gen Certified MongoDB Database Developer</p>
+                    <p>Interview trained at Meta. Better-Eng Badge (20+ tasks). Elite Wiki Editor.</p>
+                </div>
+                <div class="project-card">
+                    <h4>AI Innovation</h4>
+                    <p class="impact">Top 2% AI Adopter at Meta</p>
+                    <p>Explored 39 unique AI tools with 100% engagement. Leading adoption of agentic workflows and
+                        developer productivity tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <p class="section-subtitle">Open to conversations about platform engineering, technical leadership, and
+                collaboration</p>
+            <div class="contact-links">
+                <a href="mailto:vimalkumar.patel1987@gmail.com" class="contact-link">✉️ vimalkumar.patel1987@gmail.com</a>
+                <a href="tel:+13124598254" class="contact-link">☎️ +1 312-459-8254</a>
+                <a href="https://linkedin.com/in/vimalkumarpatel" class="contact-link" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/vimalkumarpatel" class="contact-link" target="_blank">💻 GitHub</a>
+            </div>
+            <p style="margin-top:1.5rem;color:var(--text-secondary);">📍 New York, NY</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Vimalkumar Patel. Built with passion and precision.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
